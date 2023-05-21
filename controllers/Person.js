@@ -6,8 +6,8 @@ router.get("/", async (req, res) => {
     const people = await Person.find();
     res.json(people);
   } catch (error) {
-    console.log("error retrieving people:", error);
-    res.json({ message: "error retrieving people" });
+    console.log("error retreiving people:", error);
+    res.json({ message: "error retreiving people" });
   }
 });
 
@@ -17,8 +17,10 @@ router.get("/:id", async (req, res) => {
     const person = await Person.findById(id);
     res.json(person);
   } catch (error) {
-    console.log("error retrieving person:", error);
-    res.json({ message: `error retrieving person with id: ${id}` });
+    console.log("error retreiving person:", error);
+    res
+      .status(404)
+      .json({ message: `error retreiving person with id ${id}` });
   }
 });
 

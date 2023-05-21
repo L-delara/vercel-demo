@@ -6,10 +6,10 @@ const personController = require("./controllers/Person");
 
 const app = express();
 
-//middleware
+// middlewares
 app.use(express.json());
 
-//routes
+// routes
 app.use("/people", personController);
 
 // db connection
