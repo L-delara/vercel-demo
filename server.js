@@ -23,6 +23,6 @@ mongoose
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, console.log(`listening on port ${PORT}`)); //npx nodemon server.js
+app.listen(PORT, console.log(`listening on port ${PORT}`)); // npx nodemon index.js
 
 module.exports = app;
